@@ -1,0 +1,1 @@
+sudo aplay ./audio/test.wav

@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Raleway:300,400,500,600,700|Crete+Round:400i" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<link rel="stylesheet" href="css/dark.css" type="text/css" />
+	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
+	<link rel="stylesheet" href="css/animate.css" type="text/css" />
+	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
+
+	<!-- Bootstrap File Upload CSS -->
+	<link rel="stylesheet" href="css/components/bs-filestyle.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/select-boxes.css" type="text/css" />
+	<!-- Bootstrap Select CSS -->
+	<link rel="stylesheet" href="css/components/bs-select.css" type="text/css" />
+	<!-- Date & Time Picker CSS -->
+	<link rel="stylesheet" href="css/components/datepicker.css" type="text/css" />
+	<link rel="stylesheet" href="css/components/timepicker.css" type="text/css" />
+
+	<!-- Range Slider CSS -->
+	<link rel="stylesheet" href="css/components/ion.rangeslider.css" type="text/css" />
+
+	<!-- Star Rating CSS -->
+	<link rel="stylesheet" href="css/components/bs-rating.css" type="text/css" />
+
+	<!-- Bootstrap Switch CSS -->
+	<link rel="stylesheet" href="css/components/bs-switches.css" type="text/css" />
+
+
+	<link rel="stylesheet" href="css/responsive.css" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Document Title
+	============================================= -->
+	<title>量子音樂工廠檢測API</title>
+	<link rel="Shortcut Icon" type="image/x-icon" href="qicon.ico" />
+	<link href="Logo100.png" rel="apple-touch-icon" />
+
+	<!--<style>
+		.file-caption.icon-visible .file-caption-name {
+			font-family: 'Lato', sans-serif;
+			color: #666;
+		}
+
+
+	.form-process > div { background-color: #999;  }
+
+	.form-process,
+	#template-contactform-submitted,
+	.template-contactform-complete .form-process {
+		display: none;
+		opacity: 0;
+		background-color: rgba(255,255,255,0.7);
+	}
+
+	.template-contactform-processing .form-process {
+		display: block;
+		opacity: 1;
+	}
+</style>-->
+
+</head>
+
+<body class="stretched" onload="document.getElementById('template-contactform-name').focus()">
+
+	<!-- Document Wrapper
+	============================================= -->
+	<div id="wrapper" class="clearfix">
+
+
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+
+			<div class="content-wrap bg-light">
+
+				<div class="container">
+
+					<div class="row justify-content-center">
+						<div class="col-lg-7 col-md-10">
+							<div class="card shadow-sm">
+								<div class="card-header">
+									<h4 class="mb-0">量子音樂－工廠檢測系統</h4>
+								</div>
+								<div class="card-body">
+
+									<div class="form-widget">
+
+										<div class="form-result"></div>
+
+										<div class="form-process css3-spinner">
+											<div class="css3-spinner-double-bounce1"></div>
+											<div class="css3-spinner-double-bounce2"></div>
+										</div>
+
+										<form class="nobottommargin" id="template-contactform" name="template-contactform" action="#" method="post" enctype="multipart/form-data">
+
+											<div class="row">
+
+
+												<div class="col-12 bottommargin-sm">
+													<label for="template-contactform-name">條碼(BarCode)<small class="text-danger">*</small></label>
+													<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="form-control required" placeholder="請操作條碼槍掃描條碼" />
+												</div>
+
+												<!--<div class="col-12 bottommargin-sm">
+													<label for="template-contactform-note">錯誤標注<small class="text-danger">*</small></label>
+													<input type="text" id="template-contactform-note" name="template-contactform-note" value="" class="form-control required" placeholder="Note" />
+												</div>-->
+
+												<div class="col-12 hidden">
+													<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" />
+												</div>
+												<div class="col-12 bottommargin-sm">
+													<button type="submit" name="template-contactform-submit" class="btn btn-primary btn-block btn-lg" id="submit">Submit</button>
+												</div>
+
+
+												<input type="hidden" name="prefix" value="template-contactform-">
+
+											</div>
+
+										</form>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="row justify-content-center" style="padding-top:30px">
+						<div class="col-lg-7 col-md-10">
+							<div class="col-12">
+								<div class="style-msg2" style="background-color: #EEE;">
+									<div class="msgtitle">使用說明</div>
+									<div class="sb-msg">
+										<p class="mb-0">條碼槍掃描條碼後，將會自動進行發送，無需點擊Submit按鈕。發送成功後，後頁面右上角會顯示讀取成功，此時再按下裝置的中央鍵即可讀取。光標於初次打開以及發送後都會停留在輸入欄位，滑鼠不要亂點就不會跑掉。</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!--<a href="#" class="btn btn-success" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> Message Sent Successfully!" onclick="SEMICOLON.widget.notifications(this); return false;">Show Success</a>
+			<div id="custom-notification-message" data-notify-position="top-right" data-notify-type="success" data-notify-msg='Barcode Sent Successfully!"'></div>-->
+			<div id="custom-notification-message" data-notify-type="success" data-notify-msg="<i class=icon-ok-sign></i> 條碼讀取成功（Barcode Sent Successfully!）" onclick="SEMICOLON.widget.notifications(this); return false;"></div>
+
+		</section><!-- #content end -->
+
+
+		<!-- Footer
+		============================================= -->
+		<footer id="footer" class="dark">
+
+			<div class="container">
+
+				<!-- Footer Widgets
+				============================================= -->
+				<div class="footer-widgets-wrap clearfix">
+					<img src="Logo100_gray.png" alt="" class="alignleft" style="margin-top: 8px; padding-right: 18px; border-right: 1px solid #4A4A4A;">
+
+							<p>量子音樂由前科技業研發團隊、音樂製作人與聲音科學家組成，除了從事專業音樂製作領域之外，並致力打造文創結合科技的產品，希望讓文化不再只是娛樂產品，而是真正的進入每個家庭，成為生活的一部分，也幫助更多的孩子快樂成長。</p>
+
+
+				</div><!-- .footer-widgets-wrap end -->
+
+			</div>
+
+			<!-- Copyrights
+			============================================= -->
+			<div id="copyrights">
+
+				<div class="container clearfix">
+
+					<div class="col_half">
+						<!--<div class="copyrights-menu copyright-links clearfix">
+							<a href="#">Home</a>/<a href="#">About</a>/<a href="#">Features</a>/<a href="#">Portfolio</a>/<a href="#">FAQs</a>/<a href="#">Contact</a>
+						</div>-->
+						Copyrights &copy; 2020 All Rights Reserved by Quantum Music Co., Ltd.
+					</div>
+
+					<div class="col_half col_last tright">
+						<div class="fright clearfix">
+							<a href="https://www.facebook.com/quantummusiclab" class="social-icon si-small si-borderless nobottommargin si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+							<a href="https://www.youtube.com/channel/UCaKGSDq4VFcvbTXjmtPscgA" class="social-icon si-small si-borderless nobottommargin si-youtube" title="Youtube">
+								<i class="icon-youtube"></i>
+								<i class="icon-youtube"></i>
+							</a>
+
+							<a href="https://vimeo.com/quantummusiclab" class="social-icon si-small si-borderless nobottommargin si-vimeo">
+								<i class="icon-vimeo"></i>
+								<i class="icon-vimeo"></i>
+							</a>
+							<a href="tel:+886255686459" class="social-icon si-small si-borderless nobottommargin si-phone" title="Phone">
+                                <i class="icon-phone"></i>
+                                <i class="icon-phone"></i>
+                                    </a>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div><!-- #copyrights end -->
+
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- External JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.js"></script>
+
+	<!-- Bootstrap File Upload Plugin -->
+	<script src="js/components/bs-filestyle.js"></script>
+
+	<!-- Select-Boxes Plugin -->
+	<script src="js/components/select-boxes.js"></script>
+
+	<!-- Bootstrap Select Plugin -->
+	<script src="js/components/bs-select.js"></script>
+
+	<!-- Date & Time Picker JS -->
+	<script src="js/components/moment.js"></script>
+	<script src="js/components/datepicker.js"></script>
+	<script src="js/components/timepicker.js"></script>
+
+	<!-- Include Date Range Picker -->
+	<script src="js/components/daterangepicker.js"></script>
+
+	<!-- Range Slider Plugin -->
+	<script src="js/components/rangeslider.min.js"></script>
+
+	<!-- Star Rating Plugin -->
+	<!--<script src="js/components/star-rating.js"></script>-->
+
+	<!-- Select-Splitter Plugin -->
+	<script src="js/components/selectsplitter.js"></script>
+
+	<!-- TinyMCE Plugin -->
+	<script src="js/components/tinymce/tinymce.min.js"></script>
+	<!--錄音程式相關 -->
+	<script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+	<!--<script src="js/appadmin.js"></script>-->
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+
+		jQuery(document).ready( function(){
+			//jQuery(window).on( 'load', function(){
+				//SEMICOLON.widget.notifications({ el: jQuery("#custom-notification-message") });
+			//});
+
+			jQuery(".range_01").ionRangeSlider({
+				grid: true,
+				min: 0,
+				max: 6,
+				from: 0,
+				prefix: "week ",
+				max_postfix: "+"
+			});
+
+			jQuery(".select-tags").select2({
+				tags: true,
+				placeholder: "請選擇標籤"
+			});
+
+			jQuery('.datetimepicker1').datetimepicker();
+
+			jQuery('.selectsplitter').selectsplitter();
+
+			tinymce.init({
+				selector: '.textarea-message',
+				menubar: false,
+				setup: function(editor) {
+					editor.on('change', function(e) {
+						editor.save();
+					});
+				}
+			});
+			/*Cookies取值作業區*/
+			var cookies_author = document.cookie.replace(/(?:(?:^|.*;\s*)author\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			var cookies_platform = document.cookie.replace(/(?:(?:^|.*;\s*)platform\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+			//jQuery("#template-contactform-name").val(cookies_author);
+			//jQuery("#template-contactform-platform-" + cookies_platform).prop("checked", true);
+			document.getElementById("submit").addEventListener("click", function(event){
+				var author = $("#template-contactform-name").val()
+				var note = $("#template-contactform-note").val()
+				var fd=new FormData();
+				fd.append("author",author);
+				fd.append("note",note);
+				$.ajax({
+					type: 'POST',
+					url: 'barcoder.php',
+					data: fd,
+					processData: false,
+					contentType: false,
+					dataType: "json" //返回格式
+				}).done(function(data) {
+					console.log(data);
+					if (data.save) {
+						$('#submit').text("Success");
+						//alert("Success");
+						document.getElementById('custom-notification-message').click();
+						$("input:text").val("");
+						//$("input").attr("value","");
+						//jQuery(window).on( 'load', function(){
+						//	SEMICOLON.widget.notifications({ el: jQuery("#custom-notification-message") });
+						//});
+						//location.reload();
+					} else {
+						alert("Fail");
+						$('#submit').text("Submit Again");
+						$('#submit').attr('disabled', false);
+					}
+
+				});
+			});
+
+
+
+		});
+
+
+	</script>
+
+
+
+</body>
+</html>
